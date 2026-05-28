@@ -1,71 +1,99 @@
 #include <stdio.h>
 #include <string.h>
+#include "mapa.h"
+#include "backtracking.h"
+#include "graphviz.h"
+#include "mapas/niger.h"
+#include "mapas/chad.h"
+#include "mapas/brasil.h"
+#include "mapas/espana.h"
 
-#define MAX_REGIONES 20
-#define MAX_VECINOS 20
-#define MAX_COLORES 8
-
-typedef struct {
-    char nombre[50];
-    int vecinos[MAX_VECINOS];
-    int numVecinos;
-    int color;
-} Region;
-
-typedef struct {
-    char nombre[50];
-    Region regiones[MAX_REGIONES];
-    int numRegiones;
-} Mapa;
-
-/* Funciones generales */
-void agregarVecino(Mapa *mapa, int origen, int destino);
-int esColorValido(Mapa *mapa, int regionActual, int color);
-int colorearBacktracking(Mapa *mapa, int regionActual, int maxColores);
-
-/* main */
-int main() {
-    // Aquí después vamos a crear el mapa y llamar las funciones
-    return 0;
+static void mostrarMenu(void)
+{
+    printf("╔══════════════════════════════════╗\n");
+    printf("║   Coloreo de Mapas con           ║\n");
+    printf("║   Backtracking                   ║\n");
+    printf("╠══════════════════════════════════╣\n");
+    printf("║  1. Niger                        ║\n");
+    printf("║  2. Chad                         ║\n");
+    printf("║  3. Brasil (Noreste)             ║\n");
+    printf("║  4. Espana                       ║\n");
+    printf("║  5. Correr todos los mapas       ║\n");
+    printf("║  0. Salir                        ║\n");
+    printf("╚══════════════════════════════════╝\n");
+    printf("Selecciona una opcion: ");
 }
 
-/* Implementación de funciones */
-void agregarVecino(Mapa *mapa, int origen, int destino) {
-    mapa->regiones[origen].vecinos[mapa->regiones[origen].numVecinos] = destino;
-    mapa->regiones[origen].numVecinos++;
+static void procesarMapa(Mapa *mapa)
+{
+    char rutaDot[128];
+    char rutaPng[128];
 
-    mapa->regiones[destino].vecinos[mapa->regiones[destino].numVecinos] = origen;
-    mapa->regiones[destino].numVecinos++;
-}
+    printf("\nProcesando: %s...\n", mapa->nombre);
 
-int esColorValido(Mapa *mapa, int regionActual, int color) {
-    for (int i = 0; i < mapa->regiones[regionActual].numVecinos; i++) {
-        int vecino = mapa->regiones[regionActual].vecinos[i];
+    int minColores = encontrarMinimoColores(mapa);
 
-        if (mapa->regiones[vecino].color == color) {
-            return 0;
-        }
+    if (minColores == -1) {
+        printf("Error: no se pudo colorear %s\n", mapa->nombre);
+        return;
     }
 
-    return 1;
+    imprimirResultado(mapa, minColores);
+
+    /* Generar visualizacion */
+    snprintf(rutaDot, sizeof(rutaDot), "salidas/%s.dot", mapa->nombre);
+    snprintf(rutaPng, sizeof(rutaPng), "salidas/%s.png", mapa->nombre);
+
+    generarDot(mapa, rutaDot);
+    generarPng(rutaDot, rutaPng);
 }
 
-int colorearBacktracking(Mapa *mapa, int regionActual, int maxColores) {
-    if (regionActual == mapa->numRegiones) {
-        return 1;
-    }
+int main(void)
+{
+    Mapa mapa;
+    int opcion;
 
-    for (int color = 0; color < maxColores; color++) {
-        if (esColorValido(mapa, regionActual, color)) {
-            mapa->regiones[regionActual].color = color;
+    do {
+        mostrarMenu();
+        if (scanf("%d", &opcion) != 1) break;
 
-            if (colorearBacktracking(mapa, regionActual + 1, maxColores)) {
-                return 1;
+        switch (opcion) {
+            case 1:
+                cargarNiger(&mapa);
+                procesarMapa(&mapa);
+                break;
+            case 2:
+                cargarChad(&mapa);
+                procesarMapa(&mapa);
+                break;
+            case 3:
+                cargarBrasil(&mapa);
+                procesarMapa(&mapa);
+                break;
+            case 4:
+                cargarEspana(&mapa);
+                procesarMapa(&mapa);
+                break;
+            case 5: {
+                Mapa mapas[4];
+                cargarNiger(&mapas[0]);
+                cargarChad(&mapas[1]);
+                cargarBrasil(&mapas[2]);
+                cargarEspana(&mapas[3]);
+                int i;
+                for (i = 0; i < 4; i++) {
+                    procesarMapa(&mapas[i]);
+                }
+                break;
             }
-
-            mapa->regiones[regionActual].color = -1;
+            case 0:
+                printf("Hasta luego!\n");
+                break;
+            default:
+                printf("Opcion invalida.\n");
         }
-    }
+
+    } while (opcion != 0);
 
     return 0;
 }
