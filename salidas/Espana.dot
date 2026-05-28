@@ -1,0 +1,54 @@
+graph "Espana" {
+    layout=dot
+    overlap=false
+    node [style=filled, fontname="Helvetica", fontsize=10]
+    edge [color=gray50]
+
+    "Galicia" [fillcolor=tomato]
+    "Asturias" [fillcolor=steelblue]
+    "Cantabria" [fillcolor=tomato]
+    "PaisVasco" [fillcolor=steelblue]
+    "Navarra" [fillcolor=mediumseagreen]
+    "LaRioja" [fillcolor=tomato]
+    "Aragon" [fillcolor=steelblue]
+    "Cataluna" [fillcolor=tomato]
+    "CastillaYLeon" [fillcolor=mediumseagreen]
+    "Madrid" [fillcolor=steelblue]
+    "CastillaLaMancha" [fillcolor=tomato]
+    "Extremadura" [fillcolor=steelblue]
+    "Andalucia" [fillcolor=mediumseagreen]
+    "Murcia" [fillcolor=steelblue]
+    "ComunidadValenciana" [fillcolor=mediumseagreen]
+    "IslasBaleares" [fillcolor=tomato]
+    "Canarias" [fillcolor=tomato]
+
+    "Galicia" -- "Asturias"
+    "Galicia" -- "CastillaYLeon"
+    "Asturias" -- "Cantabria"
+    "Asturias" -- "CastillaYLeon"
+    "Cantabria" -- "PaisVasco"
+    "Cantabria" -- "CastillaYLeon"
+    "PaisVasco" -- "Navarra"
+    "PaisVasco" -- "LaRioja"
+    "PaisVasco" -- "CastillaYLeon"
+    "Navarra" -- "LaRioja"
+    "Navarra" -- "Aragon"
+    "LaRioja" -- "Aragon"
+    "LaRioja" -- "CastillaYLeon"
+    "Aragon" -- "Cataluna"
+    "Aragon" -- "CastillaYLeon"
+    "Aragon" -- "CastillaLaMancha"
+    "Aragon" -- "ComunidadValenciana"
+    "Cataluna" -- "ComunidadValenciana"
+    "CastillaYLeon" -- "Madrid"
+    "CastillaYLeon" -- "CastillaLaMancha"
+    "CastillaYLeon" -- "Extremadura"
+    "Madrid" -- "CastillaLaMancha"
+    "CastillaLaMancha" -- "Extremadura"
+    "CastillaLaMancha" -- "Andalucia"
+    "CastillaLaMancha" -- "Murcia"
+    "CastillaLaMancha" -- "ComunidadValenciana"
+    "Extremadura" -- "Andalucia"
+    "Andalucia" -- "Murcia"
+    "Murcia" -- "ComunidadValenciana"
+}

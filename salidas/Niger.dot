@@ -1,0 +1,28 @@
+graph "Niger" {
+    layout=dot
+    overlap=false
+    node [style=filled, fontname="Helvetica", fontsize=10]
+    edge [color=gray50]
+
+    "Agadez" [fillcolor=tomato]
+    "Diffa" [fillcolor=steelblue]
+    "Dosso" [fillcolor=tomato]
+    "Maradi" [fillcolor=steelblue]
+    "Tahoua" [fillcolor=mediumseagreen]
+    "Tillaberi" [fillcolor=steelblue]
+    "Zinder" [fillcolor=mediumseagreen]
+    "Niamey" [fillcolor=mediumseagreen]
+
+    "Agadez" -- "Diffa"
+    "Agadez" -- "Tahoua"
+    "Agadez" -- "Zinder"
+    "Diffa" -- "Zinder"
+    "Dosso" -- "Maradi"
+    "Dosso" -- "Tahoua"
+    "Dosso" -- "Tillaberi"
+    "Dosso" -- "Niamey"
+    "Maradi" -- "Tahoua"
+    "Maradi" -- "Zinder"
+    "Tahoua" -- "Tillaberi"
+    "Tillaberi" -- "Niamey"
+}

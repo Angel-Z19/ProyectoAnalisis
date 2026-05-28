@@ -1,0 +1,85 @@
+graph "Brasil" {
+    layout=dot
+    overlap=false
+    node [style=filled, fontname="Helvetica", fontsize=10]
+    edge [color=gray50]
+
+    "Acre" [fillcolor=tomato]
+    "Alagoas" [fillcolor=tomato]
+    "Amapa" [fillcolor=tomato]
+    "Amazonas" [fillcolor=steelblue]
+    "Bahia" [fillcolor=steelblue]
+    "Ceara" [fillcolor=tomato]
+    "DistritoFederal" [fillcolor=tomato]
+    "EspiritoSanto" [fillcolor=tomato]
+    "Goias" [fillcolor=mediumseagreen]
+    "Maranhao" [fillcolor=tomato]
+    "MatoGrosso" [fillcolor=tomato]
+    "MatoGrossoDoSul" [fillcolor=steelblue]
+    "MinasGerais" [fillcolor=gold]
+    "Para" [fillcolor=mediumseagreen]
+    "Paraiba" [fillcolor=steelblue]
+    "Parana" [fillcolor=tomato]
+    "Pernambuco" [fillcolor=mediumseagreen]
+    "Piaui" [fillcolor=gold]
+    "RioDeJaneiro" [fillcolor=steelblue]
+    "RioGrandeDoNorte" [fillcolor=mediumseagreen]
+    "RioGrandeDoSul" [fillcolor=tomato]
+    "Rondonia" [fillcolor=mediumseagreen]
+    "Roraima" [fillcolor=tomato]
+    "SantaCatarina" [fillcolor=steelblue]
+    "SaoPaulo" [fillcolor=mediumseagreen]
+    "Sergipe" [fillcolor=mediumseagreen]
+    "Tocantins" [fillcolor=gold]
+
+    "Acre" -- "Amazonas"
+    "Acre" -- "Rondonia"
+    "Alagoas" -- "Bahia"
+    "Alagoas" -- "Pernambuco"
+    "Alagoas" -- "Sergipe"
+    "Amapa" -- "Para"
+    "Amazonas" -- "Para"
+    "Amazonas" -- "Rondonia"
+    "Amazonas" -- "Roraima"
+    "Amazonas" -- "MatoGrosso"
+    "Bahia" -- "EspiritoSanto"
+    "Bahia" -- "Goias"
+    "Bahia" -- "MinasGerais"
+    "Bahia" -- "Pernambuco"
+    "Bahia" -- "Piaui"
+    "Bahia" -- "Sergipe"
+    "Bahia" -- "Tocantins"
+    "Ceara" -- "Paraiba"
+    "Ceara" -- "Pernambuco"
+    "Ceara" -- "Piaui"
+    "Ceara" -- "RioGrandeDoNorte"
+    "DistritoFederal" -- "Goias"
+    "DistritoFederal" -- "MinasGerais"
+    "EspiritoSanto" -- "MinasGerais"
+    "EspiritoSanto" -- "RioDeJaneiro"
+    "Goias" -- "MatoGrosso"
+    "Goias" -- "MatoGrossoDoSul"
+    "Goias" -- "MinasGerais"
+    "Goias" -- "Tocantins"
+    "Maranhao" -- "Para"
+    "Maranhao" -- "Piaui"
+    "Maranhao" -- "Tocantins"
+    "MatoGrosso" -- "MatoGrossoDoSul"
+    "MatoGrosso" -- "Para"
+    "MatoGrosso" -- "Rondonia"
+    "MatoGrosso" -- "Tocantins"
+    "MatoGrossoDoSul" -- "MinasGerais"
+    "MatoGrossoDoSul" -- "Parana"
+    "MatoGrossoDoSul" -- "SaoPaulo"
+    "MinasGerais" -- "RioDeJaneiro"
+    "MinasGerais" -- "SaoPaulo"
+    "Para" -- "Roraima"
+    "Para" -- "Tocantins"
+    "Paraiba" -- "Pernambuco"
+    "Paraiba" -- "RioGrandeDoNorte"
+    "Parana" -- "SantaCatarina"
+    "Parana" -- "SaoPaulo"
+    "Pernambuco" -- "Piaui"
+    "RioDeJaneiro" -- "SaoPaulo"
+    "RioGrandeDoSul" -- "SantaCatarina"
+}

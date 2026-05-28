@@ -1,0 +1,77 @@
+graph "Chad" {
+    layout=dot
+    overlap=false
+    node [style=filled, fontname="Helvetica", fontsize=10]
+    edge [color=gray50]
+
+    "BahrElGazel" [fillcolor=tomato]
+    "Batha" [fillcolor=steelblue]
+    "Borkou" [fillcolor=mediumseagreen]
+    "ChariBaguirmi" [fillcolor=tomato]
+    "EnnediEst" [fillcolor=tomato]
+    "EnnediOuest" [fillcolor=steelblue]
+    "Guera" [fillcolor=mediumseagreen]
+    "HadjerLamis" [fillcolor=gold]
+    "Kanem" [fillcolor=steelblue]
+    "Lac" [fillcolor=tomato]
+    "LogoneOccidental" [fillcolor=tomato]
+    "LogoneOriental" [fillcolor=steelblue]
+    "Mandoul" [fillcolor=gold]
+    "MayoKebbiEst" [fillcolor=mediumseagreen]
+    "MayoKebbiOuest" [fillcolor=gold]
+    "MoyenChari" [fillcolor=tomato]
+    "Ouaddai" [fillcolor=tomato]
+    "Salamat" [fillcolor=gold]
+    "Sila" [fillcolor=steelblue]
+    "Tandjile" [fillcolor=steelblue]
+    "Tibesti" [fillcolor=tomato]
+    "WadiFira" [fillcolor=mediumseagreen]
+    "NDjamena" [fillcolor=steelblue]
+
+    "BahrElGazel" -- "Borkou"
+    "BahrElGazel" -- "Batha"
+    "BahrElGazel" -- "Kanem"
+    "BahrElGazel" -- "HadjerLamis"
+    "Batha" -- "Borkou"
+    "Batha" -- "WadiFira"
+    "Batha" -- "Ouaddai"
+    "Batha" -- "Salamat"
+    "Batha" -- "HadjerLamis"
+    "Batha" -- "Guera"
+    "Borkou" -- "Tibesti"
+    "Borkou" -- "EnnediOuest"
+    "Borkou" -- "Kanem"
+    "ChariBaguirmi" -- "HadjerLamis"
+    "ChariBaguirmi" -- "NDjamena"
+    "ChariBaguirmi" -- "MayoKebbiEst"
+    "ChariBaguirmi" -- "Tandjile"
+    "ChariBaguirmi" -- "Guera"
+    "EnnediEst" -- "EnnediOuest"
+    "EnnediEst" -- "WadiFira"
+    "EnnediOuest" -- "WadiFira"
+    "Guera" -- "Ouaddai"
+    "Guera" -- "Sila"
+    "Guera" -- "Salamat"
+    "Guera" -- "HadjerLamis"
+    "Guera" -- "Tandjile"
+    "Guera" -- "Mandoul"
+    "Guera" -- "MoyenChari"
+    "HadjerLamis" -- "Kanem"
+    "HadjerLamis" -- "Lac"
+    "HadjerLamis" -- "NDjamena"
+    "Kanem" -- "Lac"
+    "LogoneOccidental" -- "Mandoul"
+    "LogoneOccidental" -- "LogoneOriental"
+    "LogoneOccidental" -- "Tandjile"
+    "LogoneOccidental" -- "MayoKebbiOuest"
+    "LogoneOriental" -- "Mandoul"
+    "Mandoul" -- "MoyenChari"
+    "Mandoul" -- "Tandjile"
+    "MayoKebbiEst" -- "MayoKebbiOuest"
+    "MayoKebbiEst" -- "Tandjile"
+    "MayoKebbiOuest" -- "Tandjile"
+    "MoyenChari" -- "Salamat"
+    "Ouaddai" -- "WadiFira"
+    "Ouaddai" -- "Sila"
+    "Salamat" -- "Sila"
+}
